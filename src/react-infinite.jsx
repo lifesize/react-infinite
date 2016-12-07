@@ -50,6 +50,7 @@ var Infinite = React.createClass({
     timeScrollStateLastsForAfterUserScrolls: React.PropTypes.number,
 
     className: React.PropTypes.string,
+    id: React.PropTypes.string,
 
     styles: React.PropTypes.shape({
       scrollableStyle: React.PropTypes.object
@@ -99,6 +100,7 @@ var Infinite = React.createClass({
       timeScrollStateLastsForAfterUserScrolls: 150,
 
       className: '',
+      id: '',
 
       styles: {}
     };
@@ -441,6 +443,7 @@ var Infinite = React.createClass({
     // topSpacer and bottomSpacer take up the amount of space that the
     // rendered elements would have taken up otherwise
     return <div className={this.computedProps.className}
+                id={this.computedProps.id}
                 ref={(c) => { this.scrollable = c; }}
                 style={this.utils.buildScrollableStyle()}
                 onScroll={this.utils.nodeScrollListener}>
